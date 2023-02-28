@@ -8,9 +8,11 @@ export const useFetch = ( url ) => {
         hasError: null
     })
 
-    const getFetch = async ( url ) => {
+    const getFetch = async () => {
         const api = await fetch( url )
+        console.log(api);
         const data = await api.json()
+        console.log(data);
 
         setEstado({
             data,

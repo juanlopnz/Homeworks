@@ -10,10 +10,10 @@ import { MultipleCustomHooks } from "./components/MultipleCustomHooks";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <FirstApp title="Counter" value={10}></FirstApp>
+    {/* <FirstApp title="Counter" value={10}></FirstApp>
     <ComponentApp></ComponentApp>
-    <GiftExpertApp></GiftExpertApp>
-    {/* <MultipleCustomHooks></MultipleCustomHooks> */}
+    <GiftExpertApp></GiftExpertApp> */}
+    <MultipleCustomHooks></MultipleCustomHooks>
 
   </React.StrictMode>,
 )
