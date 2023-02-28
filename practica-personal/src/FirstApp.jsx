@@ -1,21 +1,10 @@
 import React from 'react'
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useCounter } from './hooks/useCounter';
 
 export const FirstApp = ({ title, value }) => {
 
-  const [counter, setCounter] = useState( value );
-
-  const handleAdd = () => {
-    setCounter(counter + 1)
-  }
-
-  const handleSubstract = () => {
-    setCounter(counter - 1)
-  }
-
-  const handleReset = () => {
-    setCounter(value)
-  }
+  const {handleAdd, handleReset, handleSubstract, counter} = useCounter(value)
 
   return (
     <>
