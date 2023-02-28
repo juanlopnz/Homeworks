@@ -7,6 +7,6 @@ import { FirstApp } from "./components/FirstApp";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <FirstApp></FirstApp>
+    <FirstApp title="Counter" value={10}></FirstApp>
   </React.StrictMode>,
 )
