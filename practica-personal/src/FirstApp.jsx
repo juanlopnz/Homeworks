@@ -30,3 +30,14 @@ export const FirstApp = ({ title, value }) => {
     </>
   )
 }
+
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+}
+
+FirstApp.defaultProps = {
+  title: "No hay Title hermano!!!!",
+  value: 300
+}
+
