@@ -6,6 +6,7 @@ import { FirstApp } from "./FirstApp";
 import { ComponentApp } from "./ComponentApp";
 import GiftExpertApp from "./GiftExpertApp";
 import { MultipleCustomHooks } from "./components/MultipleCustomHooks";
+import { Father } from './components/Father';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +14,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <FirstApp title="Counter" value={10}></FirstApp>
     <ComponentApp></ComponentApp>
     <GiftExpertApp></GiftExpertApp> */}
-    <MultipleCustomHooks></MultipleCustomHooks>
+    {/* <MultipleCustomHooks></MultipleCustomHooks> */}
+    <Father></Father>
 
   </React.StrictMode>,
 )
