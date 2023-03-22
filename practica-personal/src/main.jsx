@@ -7,6 +7,7 @@ import { ComponentApp } from "./ComponentApp";
 import GiftExpertApp from "./GiftExpertApp";
 import { MultipleCustomHooks } from "./components/MultipleCustomHooks";
 import { Father } from './components/Father';
+import { TodoApp } from "./components/TodoApp";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ComponentApp></ComponentApp>
     <GiftExpertApp></GiftExpertApp> */}
     {/* <MultipleCustomHooks></MultipleCustomHooks> */}
-    <Father></Father>
-
+    {/* <Father></Father> */}
+    <TodoApp></TodoApp>
   </React.StrictMode>,
 )
