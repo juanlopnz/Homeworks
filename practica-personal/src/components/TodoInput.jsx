@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Input = ({onNewTodo}) => {
+export const TodoInput = ({onNewTodo}) => {
 
   const [todo, setTodo] = useState()
 

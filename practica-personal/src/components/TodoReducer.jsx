@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const actions = {
   ADD: 'add',
-  REMOVE: 'rm'
+  REMOVE: 'rm',
+  DONE: 'done'
 }
 
 export const TodoReducer = (initialState = [], action) => {
@@ -16,8 +17,13 @@ export const TodoReducer = (initialState = [], action) => {
     case (actions.REMOVE):
       const newState = initialState.filter((x) => x.id !== action.payload)
       return newState
+    case (actions.DONE):
+      const doneState = initialState.map((todo) => {
+        if(todo.id === action.payload) return {...todo, done: true}
+        return todo
+      })
+      return doneState
     default:
       return initialState;
   }
-  return initialState;
 }
