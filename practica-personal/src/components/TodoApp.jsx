@@ -1,7 +1,7 @@
-import React, { useReducer } from 'react'
-import { TodoReducer } from './TodoReducer'
-import { List } from "./List";
-import { Input } from "./Input";
+import React, { useCallback, useReducer } from 'react'
+import { TodoReducer, actions } from './TodoReducer'
+import { List } from "./TodoList";
+import { Input } from "./TodoInput";
 
 const inicialState = [{
   id: new Date().getTime(),
@@ -13,13 +13,27 @@ export const TodoApp = () => {
 
   const [todos, dispatch] = useReducer(TodoReducer, inicialState)
 
-  const handleNewTodo = (todo) => {
-    const action = {
-      type:'[TODO] ADD TODO',
-      payload: todo
-    }
-    dispatch(action)
-  }
+  const handleNewTodo = useCallback(
+    (todo) => {
+      const action = {
+        type: actions.ADD,
+        payload: todo
+      }
+      dispatch(action)
+    },
+    [],
+  )
+
+  const removeTodo = useCallback(
+    (todo) => {
+      const action = {
+        type: actions.REMOVE,
+        payload: todo.id
+      }
+      dispatch(action)
+    }, []
+  )
+
 
   return (
     <div>
@@ -28,7 +42,7 @@ export const TodoApp = () => {
 
       <div>
         <div>
-          <List todos={ todos }></List>
+          <List removeTodo={removeTodo} todos={todos}></List>
         </div>
         <div>
           <Input onNewTodo={handleNewTodo}></Input>
