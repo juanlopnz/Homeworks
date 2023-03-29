@@ -19,7 +19,7 @@ export const TodoReducer = (initialState = [], action) => {
       return newState
     case (actions.DONE):
       const doneState = initialState.map((todo) => {
-        if(todo.id === action.payload) return {...todo, done: true}
+        if(todo.id === action.payload) return {...todo, done: !todo.done}
         return todo
       })
       return doneState

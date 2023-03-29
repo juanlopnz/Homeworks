@@ -7,10 +7,14 @@ const inicialState = [{
   done: false
 }]
 
+const init = () => {
+  return JSON.parse( localStorage.getItem( 'todos' )) || []
+}
+
 export const useTodo = () => {
 
-  const [todos, dispatch] = useReducer(TodoReducer, inicialState)
-
+  const [todos, dispatch] = useReducer(TodoReducer, inicialState, init)
+  
   const [countTodos, setCountTodos] = useState(todos.length)
 
   const [countPendingTodos, setCountPendingTodos] = useState((todos.filter((x) => !x.done)).length)
@@ -49,6 +53,7 @@ export const useTodo = () => {
   useEffect(() => {
     setCountTodos(todos.length)
     setCountPendingTodos((todos.filter((x) => x.done === false)).length)
+    localStorage.setItem('todos', JSON.stringify( todos ) )
   }, [todos])
 
   return { todos, handleNewTodo, removeTodo, doneTodo, countTodos, countPendingTodos }
