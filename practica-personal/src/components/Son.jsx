@@ -6,7 +6,7 @@ export const Son = memo(
     console.log('again reloaded...');
     return (
       <button
-        onClick={() => { increment(numero) }}
+        onClick={() =>  {increment(numero)} }
       >
         {numero}
       </button>

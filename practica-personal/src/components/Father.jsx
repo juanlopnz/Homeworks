@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import {Son} from "./Son"
 
 export const Father = () => {
@@ -7,7 +7,7 @@ export const Father = () => {
 
   const increment = useCallback(
     (num) => {
-      setValor(valor + num)
+      setValor(preValor => preValor + num)
     },
     []
   )
