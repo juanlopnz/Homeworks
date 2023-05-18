@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./index.css">
+  <title>Demo App</title>
+</head>
+<body>
+  <div>
+    <h1>Socket Client</h1>
+    <hr />
+    <div>
+      <h3> Enviar Mensaje </h3>
+      <hr />
+      <input type="text"
+        id="txtUid"
+        placeholder="uid"
+        autocomplete="false"
+      >
+
+      <input type="text"
+        id="txtMensaje"
+        placeholder="mensajes"
+        autocomplete="false"
+      >
+
+      <h3> Usuarios </h3>
+      <hr />
+      <ul id="lista-usuarios"></ul>
+    </div>
+    <div>
+     <h3> Chats </h3>
+     <div>
+        <div id="chats-body"></div>
+     </div>
+     <h3> Privados </h3>
+     <div>
+        <div id="chats-body"></div>
+     </div>
+    </div>
+  </div>
+  <script src="./socket.io/socket.io.js"></script>
+  <script src="./js/socket-client.js"></script>
+  <script src="./js/chat.js"></script> 
+</body>
+</html>
