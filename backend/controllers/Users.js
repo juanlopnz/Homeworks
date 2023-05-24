@@ -1,4 +1,7 @@
-const listarUsuarios = async (req, res = express.request) => { 
+const express = require('express');
+const { Usuario } = require('../models/UsuarioScheme');
+
+const listarUsuarios = async (req, res = express.response) => { 
   const usuarios = await Usuario.find().poulate('tareas', 'title');
   
   try{
